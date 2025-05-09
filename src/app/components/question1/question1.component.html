@@ -1,0 +1,61 @@
+<div class="question1-container">
+  <div class="filters">
+    <p-multiSelect
+      [options]="optionsName"
+      [(ngModel)]="selectedName"
+      placeholder="Select Name"
+      display="chip">
+    </p-multiSelect>
+
+    <p-multiSelect
+      [options]="optionsScientific"
+      [(ngModel)]="selectedScientific"
+      placeholder="Select Scientific Name"
+      display="chip">
+    </p-multiSelect>
+
+    <p-multiSelect
+      [options]="optionsCondition"
+      [(ngModel)]="selectedCondition"
+      placeholder="Select Condition"
+      display="chip">
+    </p-multiSelect>
+
+    <p-multiSelect
+      [options]="optionsHeight"
+      [(ngModel)]="selectedHeight"
+      placeholder="Select Height"
+      display="chip">
+    </p-multiSelect>
+
+    <p-multiSelect
+      [options]="optionsDbh"
+      [(ngModel)]="selectedDbh"
+      placeholder="Select DBH"
+      display="chip">
+    </p-multiSelect>
+
+    <button (click)="applyFilters()">Filter</button>
+  </div>
+
+  <p-table [value]="filteredTrees">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Common Name</th>
+        <th>Scientific Name</th>
+        <th>Condition</th>
+        <th>Height</th>
+        <th>DBH</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tree>
+      <tr>
+        <td>{{ tree.Cmn_Name }}</td>
+        <td>{{ tree.Sci_Name }}</td>
+        <td>{{ tree.Condition }}</td>
+        <td>{{ tree.Height }}</td>
+        <td>{{ tree.DBH1 }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

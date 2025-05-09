@@ -1,0 +1,27 @@
+.question1-container {
+  padding: 1rem;
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    p-multiSelect {
+      min-width: 200px;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #007ad9;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+
+  p-table {
+    width: 100%;
+  }
+}
