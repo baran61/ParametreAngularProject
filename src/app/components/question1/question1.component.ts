@@ -35,12 +35,14 @@ export class Question1Component implements OnInit {
 
   ngOnInit(): void {
     this.treeService.getTrees().subscribe(data => {
-      console.log('Gelen veri:', data);
+      console.log('Gelen veri:', data);   // Veri geliyor mu konsol üzerinden kontrol işlemi
       this.trees = data;
       this.filteredTrees = data;
       this.setFilterOptions(data);
     });
   }
+
+  // Filtreleme seçenekleri
 
   setFilterOptions(data: Tree[]) {
     this.optionsName = uniqueValues(data, 'Cmn_Name');
@@ -49,6 +51,8 @@ export class Question1Component implements OnInit {
     this.optionsHeight = uniqueValues(data, 'Height').filter(Boolean).map(String);
     this.optionsDbh = uniqueValues(data, 'DBH1').filter(Boolean).map(String);
   }
+
+  // Filtreleme methodu
 
   applyFilters() {
     const filtered = this.trees.filter(tree =>

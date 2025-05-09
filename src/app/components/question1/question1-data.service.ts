@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Tree } from './question1.model';
 import { map } from 'rxjs/operators';
 
+// API üzerinden verilerin çekilme işlemi
+
 @Injectable({ providedIn: 'root' })
 export class Question1DataService {
   private readonly url = 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0/query?where=1%3D1&outFields=*&f=json';
