@@ -1,1 +1,70 @@
-<p>question2 works!</p>
+<div class="task-form-wrapper">
+  <form [formGroup]="form" (ngSubmit)="addTask()">
+    <div class="form-group">
+      <label for="type">Görev Türü</label>
+      <p-dropdown
+        id="type"
+        [options]="types"
+        formControlName="type"
+        placeholder="Görev Türü"
+      ></p-dropdown>
+    </div>
+
+    <div class="form-group">
+      <label for="content">İçerik</label>
+      <input id="content" type="text" pInputText formControlName="content" />
+    </div>
+
+    <div class="form-group">
+      <label for="assignee"> Görevlendirilecek Kişi</label>
+      <p-dropdown
+        id="assignee"
+        [options]="users"
+        formControlName="assignee"
+        placeholder="Kişi Seç"
+      ></p-dropdown>
+    </div>
+
+    <button
+      type="submit"
+      pButton
+      label="Görev Ekle"
+      class="btn-primary"
+    ></button>
+  </form>
+</div>
+
+<p-table [value]="tasks" class="table-full">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Görev No</th>
+      <th>Tür</th>
+      <th>İçerik</th>
+      <th>Atanan Kişi</th>
+      <th>Durum</th>
+      <th>Aksiyon</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-task>
+    <tr>
+      <td>{{ task.id }}</td>
+      <td>{{ task.type }}</td>
+      <td>{{ task.content }}</td>
+      <td>{{ task.assignee }}</td>
+      <td>{{ task.status }}</td>
+      <td>
+        <button
+          *ngIf="task.status === 'Süreçte'"
+          pButton
+          label="Onayla"
+          class="btn-primary"
+          (click)="approveTask(task)"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<div class="chart-wrapper">
+  <p-chart type="pie" [data]="chartData" [options]="chartOptions"></p-chart>
+</div>

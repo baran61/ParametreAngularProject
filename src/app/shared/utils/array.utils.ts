@@ -12,3 +12,16 @@ export function uniqueValues<T>(arr: T[], key: keyof T): string[] {
 
   return Array.from(set);
 }
+
+// Belirli bir öğeyi diziden siler
+export function removeItemById<T extends { id: number }>(arr: T[], item: T): T[] {
+  return arr.filter(i => i.id !== item.id);
+}
+
+// Rastgele yeni bir kart nesnesi oluşturur
+export function createNewCardItem<T extends { id: number }>(data: Partial<T>): T {
+  return {
+    id: Date.now(),
+    ...data
+  } as T;
+}

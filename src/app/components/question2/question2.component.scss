@@ -1,0 +1,38 @@
+.task-form-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+
+    .form-group {
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.table-full {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1000px;
+}
+
+button.btn-primary {
+  @extend .btn-primary;
+}
+
+.chart-wrapper {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f7f9fc;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

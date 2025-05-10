@@ -1,0 +1,88 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #000; // set default text color to black
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+
+  > app-a-card,
+  > app-b-card,
+  > app-c-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #000;
+}
+
+.card button {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+  color: #000;
+}
+
+.card li button {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.card button:last-child {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
