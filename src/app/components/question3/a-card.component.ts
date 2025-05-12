@@ -1,7 +1,7 @@
 // src/app/components/a-card/a-card.component.ts
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ACardItem } from '../../model/a-card.model';
+import { ACardItem } from '../../shared/models/card-models/a-card.model';
 import { SharedCardComponent } from '../../shared/components/card.components';
 
 @Component({

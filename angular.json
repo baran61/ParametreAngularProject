@@ -32,7 +32,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "https://js.arcgis.com/4.29/esri/themes/light/main.css"
             ],
             "scripts": []
           },

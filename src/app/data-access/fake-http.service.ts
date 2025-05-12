@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { CardItem } from '../model/card.model';
+import { CardItem } from '../shared/models/card-models/card.model';
 
 const sampleData: CardItem[] = [
   // Teknoloji (10 adet)

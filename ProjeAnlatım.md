@@ -78,3 +78,13 @@ Bu soruda 3 farklı konuya sahip , 3 aynı kart sahte HTTP isteği üzerinden y�
  ## QUESTİON 5
 
  ### QUESTİON 5 ANA YAPISI
+
+Bu soru ESRI'nin JavaScript API'siyle yapılmış harita uygulamasını Angular ortamında yeniden oluşturma görevini ele alıyor.
+
+1) `npm install @arcgis/core` kodu ile ESRI JavaScript API'sini projeme dahil ediyorum. 
+2)  angular.json dosyasyı içinde styles bölümü altına `"https://js.arcgis.com/4.29/esri/themes/light/main.css"`esri css dosyasını manuel bir şekilde ekledim.
+3) src/index.html dosyasında header bölümüne bu css'in linkini yerleştirdim. Böylece bu temayı projemde kullanabilir hale geldim.
+4) Haritanın görüntüsünü oluşturmakla başlıyorum. question5.component.html dosyasında selectedObjectId ile tablodaki seçili satırı işaretledim.
+3) 
+              
+

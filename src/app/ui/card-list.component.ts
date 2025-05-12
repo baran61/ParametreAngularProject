@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FakeHttpService } from '../data-access/fake-http.service'
-import { CardItem } from '../model/card.model';
+import { CardItem } from '../shared/models/card-models/card.model';
 import { SharedCardComponent } from '../shared/components/card.components';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardItem } from '../../model/card.model';
+import { CardItem } from '../models/card-models/card.model';
 
 @Component({
   selector: 'app-shared-card',

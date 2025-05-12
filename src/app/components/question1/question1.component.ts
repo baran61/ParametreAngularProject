@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { TableModule } from 'primeng/table';
-import { Question1DataService } from './question1-data.service';
-import { Tree } from './question1.model';
+import { TreeDataService } from '../../shared/service/data-service';
+import { Tree } from '../../shared/models/tree-model/tree.model';
 import { uniqueValues } from '../../shared/utils/array.utils';
 
 @Component({
@@ -12,8 +12,7 @@ import { uniqueValues } from '../../shared/utils/array.utils';
   standalone: true,
   templateUrl: './question1.component.html',
   styleUrls: ['./question1.component.scss'],
-  imports: [CommonModule, FormsModule, MultiSelectModule, TableModule],
-  providers: [Question1DataService]
+  imports: [CommonModule, FormsModule, MultiSelectModule, TableModule]
 })
 export class Question1Component implements OnInit {
   trees: Tree[] = [];
@@ -31,7 +30,7 @@ export class Question1Component implements OnInit {
   optionsHeight: string[] = [];
   optionsDbh: string[] = [];
 
-  constructor(private treeService: Question1DataService) {}
+  constructor(private treeService: TreeDataService) {}
 
   ngOnInit(): void {
     this.treeService.getTrees().subscribe(data => {
