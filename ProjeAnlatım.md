@@ -63,4 +63,18 @@ Bu soruda 3 farklı konuya sahip , 3 aynı kart sahte HTTP isteği üzerinden y�
 
 ### QUESTİON 4 ANA YAPISI
 
+ * FlexibleCardComponent iskelet yapısı oluşturuldu. *ngFor kullanarak her öğeyi döner, “Ekle” butonunu içeride barındırır, “Sil” işlemi onRemove.emit() ile dışa aktarılır.
+	
+ * Kart içeriğini dışarıdan kullanmak için ng-content kullanıldı ve select metodu ile içeri aktarıldı.
  
+ * @for veya @ngFor işlemleri sadece kart component içinde kaldı. 
+
+ * Yeni ekle butonu flexible-card.components.ts içinde yer alıyor ve dışarıdan sadece @Output() olarak dinleniyor.
+
+ * Sil butonu list-item.components.ts içinde silme işlemi yapılmakta ve @Output() ile dışa aktarılmakta.
+
+ * Card düzeni ve Form düzeni için ortak scss dosyasından stiller kullanıldı.
+
+ ## QUESTİON 5
+
+ ### QUESTİON 5 ANA YAPISI

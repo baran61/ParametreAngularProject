@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardListComponent } from '../../ui/card-list.component';
 
 // Router üzerinden sayfa görüntülenmesi
+
 @Component({
   selector: 'app-question3',
   standalone: true,

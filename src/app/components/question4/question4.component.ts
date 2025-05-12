@@ -1,11 +1,50 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FlexibleCardComponent } from '../../shared/components/flexible-card.components';
+
+interface Book {
+  id: number;
+  name: string;
+}
 
 @Component({
   selector: 'app-question4',
-  imports: [],
-  templateUrl: './question4.component.html',
-  styleUrl: './question4.component.scss'
+  standalone: true,
+  imports: [CommonModule, FlexibleCardComponent],
+  template: `
+    <app-flexible-card
+      [title]="'Kitap Listesi'"
+      [items]="books"
+      (onAdd)="addBook()"
+      (onRemove)="removeBook($event)"
+    >
+      <ng-template let-book let-onRemove="onRemove">
+        <div class="list-item">
+          <span>{{ book.name }}</span>
+          <button (click)="onRemove()">Sil</button>
+        </div>
+      </ng-template>
+    </app-flexible-card>
+  `,
+  //styleUrls: ['../../shared/styles/card-styles.scss']
 })
 export class Question4Component {
+  books: Book[] = [
+    { id: 1, name: 'Angular Essentials' },
+    { id: 2, name: 'Learn React in 3 Steps' },
+    { id: 3, name: 'TypeScript Deep Dive' },
+    { id :4, name: 'JS Tricks'},
+  ];
 
+  addBook(): void {
+    const newBook: Book = {
+      id: Date.now(),
+      name: 'Yeni Kitap ' + (this.books.length + 1)
+    };
+    this.books = [...this.books, newBook]; // Önceki books bilgilerini kaybetmeden güncelleme işlemi
+  }
+
+  removeBook(book: Book): void {
+    this.books = this.books.filter(b => b.id !== book.id); 
+  }
 }
