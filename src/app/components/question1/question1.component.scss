@@ -1,3 +1,5 @@
+@use '../../shared/styles/index.scss' as *;
+
 .question1-container {
   padding: 1rem;
 
@@ -6,6 +8,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
+    justify-content: center;
 
     p-multiSelect {
       min-width: 200px;

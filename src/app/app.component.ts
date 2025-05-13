@@ -15,7 +15,6 @@ import { RouterModule } from '@angular/router';
     </nav>
 
     <router-outlet></router-outlet>
-  `,
-  styleUrls: ['./shared/styles/_common.scss']
+  `
 })
 export class AppComponent {}

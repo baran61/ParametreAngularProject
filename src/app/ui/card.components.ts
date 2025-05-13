@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardItem } from '../models/card-models/card.model';
+import { CardItem } from '../shared/models/card-models/card.model';
 
 @Component({
   selector: 'app-shared-card',
@@ -18,7 +18,7 @@ import { CardItem } from '../models/card-models/card.model';
       <button (click)="onAdd()">Ekle</button>
     </div>
   `,
-  styleUrls: ['../../shared/styles/card-styles.scss']
+  styleUrls: ['../shared/styles/card-styles.scss']
 })
 export class SharedCardComponent {
   @Input() title: string = '';

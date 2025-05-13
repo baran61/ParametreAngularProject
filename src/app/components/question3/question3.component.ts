@@ -9,8 +9,11 @@ import { CardListComponent } from '../../ui/card-list.component';
   standalone: true,
   imports: [CommonModule, CardListComponent],
   template: `
+  <div>
     <h1>Question 3 - Kartlar</h1>
     <app-card-list></app-card-list>
+  </div>
+    
   `
 })
 export class Question3Component {}

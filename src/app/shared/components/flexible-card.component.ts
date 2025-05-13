@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListItemComponent } from '../components/list-item.components'; // Tekrar kullanım için
+import { ListItemComponent } from './list-item.components'; // Tekrar kullanım için
 
 @Component({
   selector: 'app-flexible-card',

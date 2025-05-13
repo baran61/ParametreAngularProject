@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexibleCardComponent } from '../../shared/components/flexible-card.components';
+import { FlexibleCardComponent } from '../../shared/components/flexible-card.component';
 
 interface Book {
   id: number;
@@ -26,25 +26,24 @@ interface Book {
       </ng-template>
     </app-flexible-card>
   `,
-  //styleUrls: ['../../shared/styles/card-styles.scss']
 })
 export class Question4Component {
   books: Book[] = [
     { id: 1, name: 'Angular Essentials' },
     { id: 2, name: 'Learn React in 3 Steps' },
     { id: 3, name: 'TypeScript Deep Dive' },
-    { id :4, name: 'JS Tricks'},
+    { id: 4, name: 'OOP Systems ' },
   ];
 
   addBook(): void {
     const newBook: Book = {
       id: Date.now(),
-      name: 'Yeni Kitap ' + (this.books.length + 1)
+      name: 'Yeni Kitap ' + (this.books.length + 1),
     };
-    this.books = [...this.books, newBook]; // Önceki books bilgilerini kaybetmeden güncelleme işlemi
+    this.books = [...this.books, newBook];
   }
 
   removeBook(book: Book): void {
-    this.books = this.books.filter(b => b.id !== book.id); 
+    this.books = this.books.filter((b) => b.id !== book.id);
   }
 }

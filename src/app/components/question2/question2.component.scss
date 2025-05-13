@@ -25,6 +25,7 @@
 
 button.btn-primary {
   @extend .btn-primary;
+  align-self: flex-end;
 }
 
 .chart-wrapper {

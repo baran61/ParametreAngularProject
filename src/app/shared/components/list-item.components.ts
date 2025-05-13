@@ -10,8 +10,7 @@ import { CommonModule } from '@angular/common';
       <span>{{ item?.name }}</span>
       <button (click)="remove.emit()">Sil</button>
     </div>
-  `,
-  styleUrls: ['../../shared/styles/_common.scss'] // List item için scss
+  `
 })
 export class ListItemComponent {
   @Input() item: any;

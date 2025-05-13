@@ -45,7 +45,7 @@
         <th>Scientific Name</th>
         <th>Condition</th>
         <th>Height</th>
-        <th>DBH</th>
+        <th>DBH1</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-tree>
@@ -56,6 +56,9 @@
         <td>{{ tree.Height }}</td>
         <td>{{ tree.DBH1 }}</td>
       </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr><td colspan="5">No results found!</td></tr>
     </ng-template>
   </p-table>
 </div>

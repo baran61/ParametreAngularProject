@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FakeHttpService } from '../data-access/fake-http.service'
 import { CardItem } from '../shared/models/card-models/card.model';
-import { SharedCardComponent } from '../shared/components/card.components';
+import { SharedCardComponent } from './card.components';
 
 @Component({
   selector: 'app-card-list',

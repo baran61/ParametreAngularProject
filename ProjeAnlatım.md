@@ -81,10 +81,17 @@ Bu soruda 3 farklı konuya sahip , 3 aynı kart sahte HTTP isteği üzerinden y�
 
 Bu soru ESRI'nin JavaScript API'siyle yapılmış harita uygulamasını Angular ortamında yeniden oluşturma görevini ele alıyor.
 
-1) `npm install @arcgis/core` kodu ile ESRI JavaScript API'sini projeme dahil ediyorum. 
+1) `npm install @arcgis/core` kodu ile ESRI JavaScript API'sini projeme dahil ediyorum. Map, MapView, FeatureLayer.
 2)  angular.json dosyasyı içinde styles bölümü altına `"https://js.arcgis.com/4.29/esri/themes/light/main.css"`esri css dosyasını manuel bir şekilde ekledim.
-3) src/index.html dosyasında header bölümüne bu css'in linkini yerleştirdim. Böylece bu temayı projemde kullanabilir hale geldim.
+3) src/index.html dosyasında header bölümüne bu css'in linkini yerleştirdim. Böylece bu temayı projemde kullanabilir hale getirdim.
 4) Haritanın görüntüsünü oluşturmakla başlıyorum. question5.component.html dosyasında selectedObjectId ile tablodaki seçili satırı işaretledim.
-3) 
+5) Harita #viewDiv id’li div içinde MapView ile başlatıldı.
+6) FeatureLayer kullanılarak REST servisteki ağaç verisini katman olarak ekledim (src/shared/service/data-service.ts altından çekiliyor veri).
+7) view.on('click') ile tıklanan konumdan hitTest ile obje bilgisini aldım(Bu şekilde popup'ın sorununu çözmüş oldum).
+8) Attributes bilgisini kullanarak view.openPopup() ile en güncel popup kullanılıp gösterildi.(Cmn_Name, Sci_Name, Condition, DBH1, Leaf_Area gibi detaylar gösterildi).
+9) Haritada tıklanan obje eğer daha önce tabloya eklenmemişse limitedTableData dizisine eklendi. Bu şekilde tabloda kullanılacak şekilde ayrılmış oldu.
+10) selectedObjectId ile hangi objeye tıklandığını takip ettim.
+11) Tablo satırlarında ngClass kullanarak o satır farklı arka planla vurguladım (.selected sınıfı ile).
+
               
 

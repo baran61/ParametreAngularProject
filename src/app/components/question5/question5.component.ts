@@ -16,7 +16,7 @@ export class Question5Component implements OnInit {
   // Tablo
   tableData: any[] = [];
   limitedTableData: any[] = []; //Harita üzerinde basılan değerler
-  tableColumns: string[] = ['Cmn_Name', 'Sci_Name', 'Condition', 'DBH1'];
+  tableColumns: string[] = ['Cmn_Name', 'Sci_Name', 'Condition', 'DBH1']; 
   selectedObjectId: number | null = null;
   errorMessage: string | null = null;
 
@@ -53,7 +53,7 @@ export class Question5Component implements OnInit {
       const map = new Map({ basemap: 'streets-navigation-vector' });
 
       const view = new MapView({
-        container: 'viewDiv',
+        container: 'viewDiv',     //viewDiv altında harita uygulaması başlatılacak
         map: map,
         center: [-82.441, 35.61],
         zoom: 14,
@@ -61,14 +61,14 @@ export class Question5Component implements OnInit {
 
       const featureLayer = new FeatureLayer({
         url: 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0',
-        outFields: ['*'],
+        outFields: ['*'], // Tüm veriler 
       });
 
       map.add(featureLayer);
-      view.popupEnabled = true;
+      view.popupEnabled = true; 
 
       view.on('click', (event: any) => {
-        view.hitTest(event).then((response: any) => {
+        view.hitTest(event).then((response: any) => { // Sağ click tıklandıgında
           const result = response.results.find(
             (r: any) => r.graphic.layer === featureLayer
           );
@@ -87,7 +87,7 @@ export class Question5Component implements OnInit {
               },
             };
             this.limitedTableData.unshift(newRow); // Dizinin başına ekle
-            this.limitedTableData = [...this.limitedTableData]; // Angular'ın değişikliği algılaması için
+            this.limitedTableData = [...this.limitedTableData]; // Diziye eklenen yeni elemandan sonra eski elemanın kaybolmaması için
 
             view.openPopup({
               title: attr.Cmn_Name ?? 'Ağaç Bilgisi',

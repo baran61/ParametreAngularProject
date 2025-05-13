@@ -39,6 +39,8 @@ export class Question1Component implements OnInit {
       this.filteredTrees = data;
       this.setFilterOptions(data);
     });
+
+    
   }
 
   // Filtreleme seçenekleri
@@ -47,8 +49,9 @@ export class Question1Component implements OnInit {
     this.optionsName = uniqueValues(data, 'Cmn_Name');
     this.optionsScientific = uniqueValues(data, 'Sci_Name');
     this.optionsCondition = uniqueValues(data, 'Condition');
-    this.optionsHeight = uniqueValues(data, 'Height').filter(Boolean).map(String);
-    this.optionsDbh = uniqueValues(data, 'DBH1').filter(Boolean).map(String);
+    this.optionsHeight = uniqueValues(data, 'Height')
+      .filter(val => val !== null && val !== undefined)
+  .map(String);    this.optionsDbh = uniqueValues(data, 'DBH1').filter(Boolean).map(String);
   }
 
   // Filtreleme methodu
